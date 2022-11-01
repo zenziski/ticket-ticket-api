@@ -6,7 +6,7 @@ module.exports = {
     middleware: [Auth, Permissions(['admin'])],
     handler: async (req, res) => {
         const Attraction = require('../models/Attraction');
-        const userId = req.user.id;
+        const userId = req.user._id;
         const { name, details } = req.body;
 
         try {

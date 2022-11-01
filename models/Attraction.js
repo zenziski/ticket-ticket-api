@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 
 const schema = mongoose.Schema({
    name: String,
-   details: Text,
+   details: String,
    user: mongoose.Schema.Types.ObjectId
 },
 );

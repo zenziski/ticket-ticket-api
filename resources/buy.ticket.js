@@ -13,6 +13,8 @@ module.exports = {
         try {
 
             const ticket = await Ticket.findOne({_id: id}).lean();
+            if(!ticket) return res.status(400).json({message: "Não foi encontrado nenhum ticket"})
+            if(!ticket.active) return res.status(400).json({message: "Ingresso desabilitado"})
 
             if((ticket.limited.active && ticket.limited.quantity < quantity) || ticket.quantity < quantity){
                 return res.status(400).json({ message: "Quantidade de ingressos maior que a permitida" });

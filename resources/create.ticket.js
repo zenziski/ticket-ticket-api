@@ -6,7 +6,7 @@ module.exports = {
     middleware: [Auth, Permissions(['admin'])],
     handler: async (req, res) => {
         const Ticket = require('../models/Ticket');
-        const userId = req.user.id;
+        const userId = req.user._id;
 
         const { name, cost, quantity, limited, attraction } = req.body;
 

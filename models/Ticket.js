@@ -10,7 +10,7 @@ const schema = mongoose.Schema({
    },
    active: {type: Boolean, default: true},
    user: mongoose.Schema.Types.ObjectId,
-   attraction: mongoose.Schema.Types.ObjectId
+   attraction: String
 },
 );
 
